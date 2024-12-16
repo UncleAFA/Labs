@@ -22,6 +22,11 @@ namespace RandomNumberStatistics
                 numbers[i] = random.Next(1, 11); // случайные числа от 1 до 10
             }
 
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine($"{i})" + numbers[i]);                
+            }
+
             // Используем лямбда-выражение для статистики
             StatsDelegate getStatistics = (int[] nums) =>
             {

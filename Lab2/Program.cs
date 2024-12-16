@@ -55,19 +55,37 @@ class Program
                 
             }
         }
-
+        primtmatr(matrix);
         Console.WriteLine($"\nМинимальный элемент главной диагонали: {minElement} в столбце {minElementIndex + 1}");
-
+        int[,] matrix2 = new int[n, n-1];
         // Выводим матрицу без столбца с минимальным элементом
         Console.WriteLine("\nМатрица после удаления столбца с минимальным элементом на главной диагонали:");
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (j != minElementIndex)
+                if (j < minElementIndex)
                 {
-                    Console.Write(matrix[i, j] + "\t");
+                    matrix2[i, j] = matrix[i, j];
                 }
+                else
+                {
+                    matrix2[i, j-1] = matrix[i, j];
+                }
+            }
+            //Console.WriteLine();
+        }
+        primtmatr(matrix2);
+
+        //TODO: дописать функцию вывода матрицы(унивирсальный)
+    }
+    static void primtmatr(int[,] matrix2)
+    {
+        for (int i = 0; i < matrix2.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix2.GetLength(1); j++)
+            {
+                Console.Write(matrix2[i, j] + "\t");
             }
             Console.WriteLine();
         }

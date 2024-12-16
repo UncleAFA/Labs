@@ -19,7 +19,7 @@ public partial class AddTaskForm : Form
         string responsible = txtResponsible.Text;
         DateTime dueDate = dtpDueDate.Value;
 
-        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(responsible))
+        if (string.IsNullOrEmpty(name))
         {
             MessageBox.Show("Название задачи и ответственный должны быть заполнены.");
             return;
